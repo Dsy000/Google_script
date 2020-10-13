@@ -2,7 +2,7 @@
 [+]In this project we add multipale views.
 
 [+]Login page:-
-![](cv.jpeg)
+![](Avenger_login.png)
 
 [+]Home Page
-![](cv.jpg)
+![](Avenger_home.png)
