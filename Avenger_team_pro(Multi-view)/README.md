@@ -4,5 +4,8 @@
 [+]Login page:-
 ![](Avenger_login.png)
 
-[+]Home Page
+[+]Home Page:-
 ![](Avenger_home.png)
+
+[+]Logout Page:-
+![](logout_page.png)
