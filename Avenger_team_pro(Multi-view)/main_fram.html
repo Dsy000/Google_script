@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base target="_top">
+    <title>Avenger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    </head>
+  <body onload="load_fr()">
+    <div id="main_frame">
+    
+    </div>
+    
+<script>
+    var Username;
+    var session_id;
+    var uid;
+    
+    function load_fr(){
+    google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;}).login_view(); 
+    }
+    
+    function submit(){
+    //google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;}).home_view(); 
+    //alert("submit");
+    //var user=document.getElementById("log_user").value;
+    //var pass=document.getElementById("log_pass").value;
+    if(document.getElementById("log_user").value === null || document.getElementById("log_pass").value === null ){
+        document.getElementById("error_server").innerHTML = "Username or Password blank :(";
+    }else{
+     google.script.run.withSuccessHandler(function(html){if(html[2] === "ok"){Username = html[0];session_id = html[1];uid="@"+Username; google.script.run.withSuccessHandler(function(html1){document.getElementById("main_frame").innerHTML= html1;document.getElementById("lodom2").innerHTML = uid; document.getElementById("lodom").innerHTML = Username ;}).home_view();}else { document.getElementById("error_server").innerHTML = html ;}}).log_check(document.getElementById("log_user").value,document.getElementById("log_pass").value);
+     }
+   
+   }
+   function home_fun(){google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;document.getElementById("lodom2").innerHTML = uid;}).home_view();}
+   function deshboard_fun(){google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;document.getElementById("lodom2").innerHTML = uid;}).home_view1();}
+   function add_cases_fun(){google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;document.getElementById("lodom2").innerHTML = uid;}).home_view2();}
+   function case_manager_fun(){google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;document.getElementById("lodom2").innerHTML = uid; }).home_view3();}
+   function logout_fun(){google.script.run.withSuccessHandler(function(html){document.getElementById("main_frame").innerHTML= html;document.getElementById("lodom2").innerHTML = uid;}).logout_view();}
+   
+
+
+</script>
+  
+  </body>
+</html>
+
+
+
